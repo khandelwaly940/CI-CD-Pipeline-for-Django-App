@@ -1,0 +1,6 @@
+django>=4.2
+flake8
+black
+gunicorn
+pytest
+pytest-django
