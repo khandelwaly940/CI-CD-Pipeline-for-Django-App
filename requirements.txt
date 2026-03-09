@@ -1,6 +1,9 @@
 django>=4.2
-flake8
-black
+django-environ
+psycopg2-binary
+whitenoise
 gunicorn
 pytest
 pytest-django
+black
+flake8
