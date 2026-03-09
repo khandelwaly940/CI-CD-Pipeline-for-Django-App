@@ -60,7 +60,8 @@ jobs:
     name: Deploy to Heroku
     runs-on: ubuntu-latest
     needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    # Only run deploy if the Heroku API key is configured
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' && secrets.HEROKU_API_KEY != ''
 
     steps:
       - name: Checkout Code
