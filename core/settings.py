@@ -19,8 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Initialize environ
 env = environ.Env(DEBUG=(bool, False))
-# Read .env.example if no other environment variables are set
-environ.Env.read_env(os.path.join(BASE_DIR, ".env.example"))
+# Read .env if a local env file exists
+env_file = os.path.join(BASE_DIR, ".env")
+if os.path.exists(env_file):
+    environ.Env.read_env(env_file)
 
 
 # Quick-start development settings - unsuitable for production
